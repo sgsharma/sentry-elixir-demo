@@ -1,3 +1,6 @@
+# vscode
+.vscode/*
+
 # Ignore package tarball (built via "mix hex.build").
 sentrydemo-*.tar
 

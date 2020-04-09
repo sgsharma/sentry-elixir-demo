@@ -25,6 +25,8 @@ defmodule SentrydemoWeb.Router do
   scope "/api/v1", SentrydemoWeb do
     pipe_through :api
     get "/handled", HandledController, :index
+    get "/unhandled", UnhandledController, :index
+    post "/process_order", ProcessOrderController, :index
   end
 end
 

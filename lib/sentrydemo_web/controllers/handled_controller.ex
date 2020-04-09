@@ -1,9 +1,9 @@
 defmodule SentrydemoWeb.HandledController do
     use SentrydemoWeb, :controller
-  
+
     def index(conn, _params) do
-        raise ArgumentError, message: "Handled an argument error."
-        exit(500)
-        json conn, 500 
+        conn
+        |> send_resp(500, Poison.encode!(%{"Error" => "A handled error occurred."}))
+        |> halt
     end
   end
