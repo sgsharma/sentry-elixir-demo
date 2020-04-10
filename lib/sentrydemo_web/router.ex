@@ -19,14 +19,18 @@ defmodule SentrydemoWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-  end
-
-  # Other scopes may use custom stacks.
-  scope "/api/v1", SentrydemoWeb do
-    pipe_through :api
     get "/handled", HandledController, :index
     get "/unhandled", UnhandledController, :index
     post "/process_order", ProcessOrderController, :index
   end
 end
+
+  # Other scopes may use custom stacks.
+#   scope "/api/v1", SentrydemoWeb do
+#     pipe_through :api
+#     get "/handled", HandledController, :index
+#     get "/unhandled", UnhandledController, :index
+#     post "/process_order", ProcessOrderController, :index
+#   end
+# end
 
